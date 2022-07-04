@@ -1,0 +1,11 @@
+Tasks:
+
+1) check against a TARN implemented in QuantLib, done
+2) a merged stepping routine, done
+3) restructure code into folders and separate gold code
+4) implement dispatch for pay-off type
+5) implement smarter selector of which rates
+6) optimize stepping routine, done 
+7) Least-squares regression done
+8) adjoint Greeks
+

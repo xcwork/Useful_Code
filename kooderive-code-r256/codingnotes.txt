@@ -1,0 +1,37 @@
+Each kernel (GPU) should be accompanied by a gold routine (CPU) and a
+test routine.  The test should check that the two routines agree up to
+a floating point error. They should agree on every path rather than on
+average when doing Monte Carlo code. 
+
+Global memory on GPU should be allocated and deallocated using
+thrust::device_vector. Transfers can be done using
+thrust::host_vector.
+
+Please do not introduce extra dependencies on external libraries. The
+main dependency at the moment is on thrust. If you really feel you
+need one, please discuss first. 
+
+Code should be licensed using the GPL v 3.0. 
+
+Vectors should be suffixed according to the class: dev for thrust device
+vectors, host for thrust host vectors, vec for stl vectors. 
+
+Each routine will lead to four source files
+1) the kernel code suffix gpu
+2) the translation from device vectors to device pointers suffix main
+3) the CPU comparison routine suffix gold
+4) the test routine suffix test
+
+one could also add in a 5th file that provides a c++ wrapper inputting
+and outputting ordinary C++  
+
+A call of the final test should be added to main.cpp 
+
+In the longer term, the project will be split into sub-projects. 
+
+The philosophy of the library is to produce code fragments that are
+easily reusable. This should be borne in mind when designing. In
+particular, we want to maximize decoupling. 
+
+Our objective is generally to design really fast pricers for single
+options, rather than routines that price many options really quickly. 

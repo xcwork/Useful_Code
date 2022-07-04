@@ -1,0 +1,10 @@
+s=step
+p=path
+f=factor
+r=rate
+
+MultiDbridge outputs in form (s,p,f)
+correlation drift kernels: inputs numbers in form (s,p,f)
+outputs numbers in form (s,r,p)
+
+

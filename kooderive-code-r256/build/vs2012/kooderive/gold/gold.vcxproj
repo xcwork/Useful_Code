@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9EBD79C5-EE1C-458C-A779-3CD64E5B63CF}</ProjectGuid>
+    <RootNamespace>gold</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <TargetExt>.lib</TargetExt>
+    <TargetName>$(ProjectName)x64</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetExt>.lib</TargetExt>
+    <TargetName>$(ProjectName)-D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetExt>.lib</TargetExt>
+    <TargetName>$(ProjectName)x64-D</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../../..; C:\boost\boost_1_38_0</AdditionalIncludeDirectories>
+      <UndefinePreprocessorDefinitions>
+      </UndefinePreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+      <PreprocessorDefinitions>_MBCS;_DEBUG; RANGE_CHECKING;_CRT_SECURE_NO_WARNINGS </PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../../..; C:\boost\boost_1_38_0</AdditionalIncludeDirectories>
+      <UndefinePreprocessorDefinitions>
+      </UndefinePreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+      <PreprocessorDefinitions>_MBCS;_DEBUG; RANGE_CHECKING;_CRT_SECURE_NO_WARNINGS </PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>../../../..; $(BOOST)</AdditionalIncludeDirectories>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+      <UndefinePreprocessorDefinitions>
+      </UndefinePreprocessorDefinitions>
+      <PreprocessorDefinitions>_MBCS;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>../../../..; $(BOOST)</AdditionalIncludeDirectories>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+      <UndefinePreprocessorDefinitions>
+      </UndefinePreprocessorDefinitions>
+      <PreprocessorDefinitions>_MBCS;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\gold\Andersen_Broadie_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\Asian_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\BasisVariableExtractionMultiEquity_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\Bridge_allocator_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\Bridge_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\BSFormulas_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\cashFlowAggregation_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\cashFlowDiscounting_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\cashFlowGeneration_earlyEx_product.h" />
+    <ClInclude Include="..\..\..\..\gold\cashFlowGeneration_equity_oned_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\cashFlowGeneration_equity_product_oned_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\cashFlowGeneration_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\cashFlowGeneration_product_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\ComputeStatistics_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\correlate_drift_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\Correlation_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\CosMethod_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\EarlyExercisableMultiEquityPayoff_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\early_exercise_value_generator_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\Errors.h" />
+    <ClInclude Include="..\..\..\..\gold\ExerciseIndices_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\HestonCF_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\InverseCumulatives_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\likelihoodRatio_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\LMM_evolver_classes_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\LMM_evolver_full_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\LMM_evolver_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\LMM_evolver_partial_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\LMM_product_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\LS_basis_examples_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\LS_Basis_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\LS_regression.h" />
+    <ClInclude Include="..\..\..\..\gold\MatrixFacade.h" />
+    <ClInclude Include="..\..\..\..\gold\Max_estimation_MC.h" />
+    <ClInclude Include="..\..\..\..\gold\Mersenne_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\mixedLRPathwise_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\MonteCarloStatistics_concrete_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\MonteCarloStatistics_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\MultiD_BS_evolver_classes_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\MultiD_Path_Gen_BS_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\MultiD_Path_Gen_Partial_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\oppGreeksBS_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\pathwise_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\pragmas.h" />
+    <ClInclude Include="..\..\..\..\gold\Regression_Selector_concrete_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\Regression_Selector_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\scramble_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\Select_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\sobol_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\sobol_primitives.h" />
+    <ClInclude Include="..\..\..\..\gold\Timers.h" />
+    <ClInclude Include="..\..\..\..\gold\TriggerableRangeAccrual_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\VG_cf_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\volstructs_gold.h" />
+    <ClInclude Include="..\..\..\..\gold\weighted_average_gold.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\gold\Andersen_Broadie_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\Asian_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\BasisVariableExtractionMultiEquity_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\Bridge_allocator_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\Bridge_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\BSFormulas_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\cashFlowAggregation_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\cashFlowDiscounting_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\cashFlowGeneration_earlyEx_product.cpp" />
+    <ClCompile Include="..\..\..\..\gold\cashFlowGeneration_equity_oned_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\cashFlowGeneration_equity_product_oned_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\cashFlowGeneration_product_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\correlate_drift_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\Correlation_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\CosMethod_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\EarlyExercisableMultiEquityPayoff_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\early_exercise_value_generator_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\Errors.cpp" />
+    <ClCompile Include="..\..\..\..\gold\ExerciseIndices_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\HestonCF_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\likelihoodRatio_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\LMM_evolver_full_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\LMM_evolver_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\LMM_product_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\LS_basis_examples_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\LS_Basis_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\LS_regression.cpp" />
+    <ClCompile Include="..\..\..\..\gold\Max_estimation_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\Mersenne_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\mixedLRPathwise_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\MonteCarloStatistics_concrete_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\MonteCarloStatistics_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\MultD_Path_gen_BS_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\MultiLS_regression.cpp" />
+    <ClCompile Include="..\..\..\..\gold\oppGreeksBS_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\pathwise_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\Regression_Selector_concrete_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\scramble_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\Selected_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\sobol_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\sobol_primitives.cpp" />
+    <ClCompile Include="..\..\..\..\gold\Timers.cpp" />
+    <ClCompile Include="..\..\..\..\gold\TriggerabeRangeAccrual_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\VG_cf_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\volstructs_gold.cpp" />
+    <ClCompile Include="..\..\..\..\gold\weighted_average_gold.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\gold\LMM_evolver_partial_gold.cpp">
+      <FileType>Document</FileType>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

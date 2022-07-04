@@ -1,0 +1,58 @@
+Changes 02/08/2014
+
+1)In <gold>
+edited Timer.h and Timer.cpp to work on LINUX
+deleted MatrixConstFacade<T>:: from MatrixFacade.h:164
+changed Correlate_drift_gold.h to correlate_drift_gold.h in LMM_evolver_full_gold.h
+changed normals_gold.h to Normals_gold.h in InverseCumulativeGold.h, oppGreeksBS_gold.cpp:
+included typename in LMM_evolver_full_gold.h:179
+changed <gold/LS_basis_gold.h> to <gold/LS_Basis_gold.h> in LS_Basis_gold.cpp
+"error: 'maxCouponPerPeriod' was not declared in this scope" and "error: 'rebate' was not declared in this scope" in TriggerableRangeAccrual_gold.h. I have declared both and set them to zero
+added std:: and (double) in cashFlowDiscounting_gold.h:180 and "#include <cmath.h>" in file
+changed Cube_gold.h to cube_gold.h in cashFlowGeneration_earlyEx_product.h
+added MatrixFacade<double> pseudoRootatStep(pseudoRoots[step]); to volstructs_gold.cpp:229: and volstructs_gold.cpp:356: and changed pseudoRoots[step] to pseudoRootatStep
+added .Facade() to volstructs_gold.cpp:246:
+
+2)In <gold/math>
+changed normals_gold.h and normals_gold.cpp to Normals_gold.h and Normals_gold.cpp in Andersen_Broadie_gold.cpp, InverseCumulatives_Gold.h
+removed extra qualification SVDSquareMatrix:: from svd_gold.h:95
+included typename in basic_matrix_gold.h:82 and basic_matrix_gold.h:143
+
+3) In <gold/gold_test>
+pseudosquareRoot.h to pseudoSquareRoot.h in svd_test.cpp
+changed normals_gold.h to Normals_gold.h in test_BSFormulas.cpp
+
+4) In <gold/gold_example/LMM_bermudan_gold.cpp>
+changed cashFlowAggregation_gold.h to CashFlowAggregation_gold.h
+commented out '_controlfp' from LMM_bermudan_gold.cpp:76
+
+5) In main folder
+added "#include <stdio.h>" to cutil_inline.h
+Changed "InverseCumulatives.h" to <inverseCumulatives.h> in Asian_Test.cu, Correlation_test.cu, LMM_evolver_full.cu, LMM_evolver_test.cu, LS_test.cu, Mains_cuda.cu, MultiD_Path_Gen_BS_Test.cu, Sobol_test.cu, correlate_drift_test.h,drift_add_test
+Changed <gold/math/Cube_gold.h> to <gold/math/cube_gold.h> in Utilities.h
+Changed "Const_memory_buffer.h" and "Const_memory_accessor.h" to <const_memory_buffer.h> and <const_memory_accessor.h> in const_memory_buffer_accessor.cu
+Changed "Const_memory_buffer.h" to #include <const_memory_buffer.h> in const_memory_accessor.h
+Changed "Correlation_Test.h" to <Correlation_test.h> in Correlation_Test.cu
+Changed "Brownian_bridge.h" to <brownian_bridge.h> in LMM_evolver_full.cu
+Changed "correlate_drift_gpu.h" to <Correlate_drift_gpu.h> in LMM_evolver_full.cu
+Removed <cuBlas.h> from LS_main.h
+Changed <gold\Regression_Selector_concrete_gold.h> to <gold/Regression_Selector_concrete_gold.h> in LS_test.cu, LSmulti_test.cu
+Included a <float> in LS_test.cu(392) and LS_test.cu(608)
+Removed "RegressionSelectorStandardDeviations::" from RegressionSelectorConcrete.h(30)
+Inlcuded a ",0" LS_test.cu(392) as there were too few arguments
+Inlcuded a <float> to all basisVariableExample_gold calls in LS_test.cu
+Changed "utilities.h" to <Utilities.h> in Market_model_pricer.cu
+Removed #include <Errors.h> from Matrix_solve_main.cu
+Removed the space in <thrust/inner_product.h > in Matrix_solve_main.cu
+Added #include <stdio.h> to cudaMacros.h and cutil.cu
+Changed "Correlate_drift_test.h" to <Correlate_drift_test.h>
+Changed <gold/math/pseudosquareRoot.h> to <gold/math/pseudoSquareRoot.h> and removed <cula_lapack_device.h> in cula_test.cu
+Changed "Correlate_drift_test.h" to <Correlate_drift_test.h>
+Changed "Scramble_test.h" to "scramble_test.h" in main.cu
+Changed <cuBlas.h> to <cublas.h> in matrix_test.cu and outerProduct_gpu.cu
+
+6) In <kooexample>
+Changed <InverseCumulatives.h> to <inverseCumulatives.h> in bermudanIRDPricer.cu, ratchet.cu
+Changed <correlate_drift_gpu.h> to <Correlate_drift_gpu.h> in ratchet.cu
+Changed <Brownian_bridge.h> to <brownian_bridge.h> in ratchet.cu
+

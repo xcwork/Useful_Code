@@ -1,0 +1,20 @@
+CudaWrappers -- simple wrappers of CUDA API to make accessing routines
+easier
+
+gold -- C++ versions of routines. This does not require CUDA.
+
+gold_example -- a C++ example project demonstrating the OPP method
+of Greek computation. Does not require CUDA. 
+
+gold_math -- C++ mathematics routines and classes. Does not require CUDA.
+
+gold_test -- C++ test project. Does not require CUDA.
+
+kooderive -- main static library of CUDA routines
+
+kooexample -- examples of cancellable swap pricing using CUDA only
+
+kooql -- example of LMM pricing of TARNs using multi--GPUS. QuantLib 
+code is used for calibration of LMM. 
+
+kootest -- test routines for CUDA which test against gold code.

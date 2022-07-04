@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C5E4D5AD-49FA-4E08-8014-5FCCC8BCFCF0}</ProjectGuid>
+    <RootNamespace>kooderive</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 5.5.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(ProjectName)-D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(ProjectName)x64-D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <TargetName>$(ProjectName)x64</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>cudart.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"
+copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+    <CudaCompile>
+      <Include>$(CULA_INC_PATH);../../../..;../../..</Include>
+      <CodeGeneration>compute_13,sm_13</CodeGeneration>
+      <Defines>_DEBUG;DEBUG;_LIB;_SCL_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;WIN32;RANGE_CHECKING</Defines>
+      <Optimization>Od</Optimization>
+      <Runtime>MTd</Runtime>
+      <RuntimeChecks>Default</RuntimeChecks>
+      <TypeInfo>true</TypeInfo>
+      <Warning>W3</Warning>
+      <GPUDebugInfo>false</GPUDebugInfo>
+      <HostDebugInfo>false</HostDebugInfo>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN64;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>cudart.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"
+copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+    <CudaCompile>
+      <Include>../../../..;../../..</Include>
+    </CudaCompile>
+    <CudaCompile>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <CodeGeneration>compute_35,sm_35; compute_13,sm_13</CodeGeneration>
+      <Defines>_LIB;_SCL_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;x64</Defines>
+      <Optimization>Od</Optimization>
+      <Runtime>MTd</Runtime>
+      <RuntimeChecks>Default</RuntimeChecks>
+      <TypeInfo>true</TypeInfo>
+      <Warning>W3</Warning>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>cudart.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\$(ConfigurationName);$(CudaToolkitLibDir)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"
+copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+    <CudaCompile>
+      <Include>$(CULA_INC_PATH);../../../..;../../..</Include>
+      <CodeGeneration>compute_13,sm_13;compute_35,sm_35</CodeGeneration>
+      <Defines>_LIB;_SCL_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;x64</Defines>
+      <FastMath>true</FastMath>
+      <Optimization>O2</Optimization>
+      <Runtime>MT</Runtime>
+      <RuntimeChecks>Default</RuntimeChecks>
+      <TypeInfo>true</TypeInfo>
+      <Warning>W3</Warning>
+    </CudaCompile>
+    <Lib>
+      <AdditionalDependencies>CudaWrappers.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\$(Platform)\$(ConfigurationName); </AdditionalLibraryDirectories>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Lib>
+    <CudaLink>
+      <AdditionalLibraryDirectories>$(SolutionDir)\$(ConfigurationName); </AdditionalLibraryDirectories>
+    </CudaLink>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN64;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>cudart.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"
+copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+    <CudaCompile>
+      <Include>../../../..;../../..</Include>
+    </CudaCompile>
+    <CudaCompile>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <CodeGeneration>compute_35,sm_35; compute_13,sm_13</CodeGeneration>
+      <Defines>_LIB;_SCL_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;x64</Defines>
+      <FastMath>true</FastMath>
+      <Optimization>O2</Optimization>
+      <Runtime>MT</Runtime>
+      <RuntimeChecks>Default</RuntimeChecks>
+      <TypeInfo>true</TypeInfo>
+      <Warning>W3</Warning>
+    </CudaCompile>
+    <CudaLink>
+      <AdditionalLibraryDirectories>$(SolutionDir)\$(Platform)\$(ConfigurationName); </AdditionalLibraryDirectories>
+    </CudaLink>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CudaCompile Include="..\..\..\..\asian_gpu.cu" />
+    <CudaCompile Include="..\..\..\..\Asian_main.cu" />
+    <CudaCompile Include="..\..\..\..\basisFunctions.cu" />
+    <CudaCompile Include="..\..\..\..\basisFunctions_main.cu" />
+    <CudaCompile Include="..\..\..\..\Bridge_gpu.cu" />
+    <CudaCompile Include="..\..\..\..\Bridge_main.cu" />
+    <CudaCompile Include="..\..\..\..\Bridge_multi_gpu.cu" />
+    <CudaCompile Include="..\..\..\..\brownian_bridge.cu" />
+    <CudaCompile Include="..\..\..\..\Brownian_generator_full.cu" />
+    <CudaCompile Include="..\..\..\..\cashFlowAggregation_gpu.cu" />
+    <CudaCompile Include="..\..\..\..\cashFlowAggregation_main.cu" />
+    <CudaCompile Include="..\..\..\..\cashFlowDiscounting_gpu.cu" />
+    <CudaCompile Include="..\..\..\..\cashFlowDiscounting_main.cu" />
+    <CudaCompile Include="..\..\..\..\cashFlowGeneration_gpu.cu" />
+    <CudaCompile Include="..\..\..\..\cashFlowGeneration_product_gpu.cu" />
+    <CudaCompile Include="..\..\..\..\cashFlowGeneration_product_main.cu" />
+    <CudaCompile Include="..\..\..\..\cashFlowGen_earlyEx_product_main.cu" />
+    <CudaCompile Include="..\..\..\..\cash_flow_gen_equity_one_dim_gpu.cu" />
+    <CudaCompile Include="..\..\..\..\cash_flow_product_equity_one_dim_gpu.cu" />
+    <CudaCompile Include="..\..\..\..\cash_flow_product_equity_one_dim_main.cu" />
+    <CudaCompile Include="..\..\..\..\ComparisonCheck.cu" />
+    <CudaCompile Include="..\..\..\..\Const_memory_buffer_accessor.cu" />
+    <CudaCompile Include="..\..\..\..\correlate_drift_gpu.cu" />
+    <CudaCompile Include="..\..\..\..\correlate_drift_main.cu" />
+    <CudaCompile Include="..\..\..\..\Correlate_gpu.cu" />
+    <CudaCompile Include="..\..\..\..\Correlation_main.cu" />
+    <CudaCompile Include="..\..\..\..\cutil.cu" />
+    <CudaCompile Include="..\..\..\..\drift_add_gpu.cu" />
+    <CudaCompile Include="..\..\..\..\drift_add_main.cu" />
+    <CudaCompile Include="..\..\..\..\early_exercise_value_generator_gpu.cu" />
+    <CudaCompile Include="..\..\..\..\early_exercise_value_generator_main.cu" />
+    <CudaCompile Include="..\..\..\..\exercise_cash_flows_gpu.cu" />
+    <CudaCompile Include="..\..\..\..\exercise_cash_flows_main.cu" />
+    <CudaCompile Include="..\..\..\..\LinearSolverConcrete_main.cu" />
+    <CudaCompile Include="..\..\..\..\LMM_evolver_all.cu" />
+    <CudaCompile Include="..\..\..\..\LMM_evolver_full.cu" />
+    <CudaCompile Include="..\..\..\..\LMM_evolver_gpu.cu" />
+    <CudaCompile Include="..\..\..\..\LMM_evolver_main.cu" />
+    <CudaCompile Include="..\..\..\..\LS_Basis_gpu.cu" />
+    <CudaCompile Include="..\..\..\..\LS_Basis_main.cu" />
+    <CudaCompile Include="..\..\..\..\LS_gpu.cu" />
+    <CudaCompile Include="..\..\..\..\LS_main.cu" />
+    <CudaCompile Include="..\..\..\..\LS_main_cula.cu" />
+    <CudaCompile Include="..\..\..\..\Market_model_pricer.cu" />
+    <CudaCompile Include="..\..\..\..\Matrix_solve_main.cu" />
+    <CudaCompile Include="..\..\..\..\multid_path_gen_BS_gpu.cu" />
+    <CudaCompile Include="..\..\..\..\multid_path_gen_BS_main.cu" />
+    <CudaCompile Include="..\..\..\..\outerProduct_gpu.cu" />
+    <CudaCompile Include="..\..\..\..\outerProduct_main.cu" />
+    <CudaCompile Include="..\..\..\..\reductions_gpu.cu" />
+    <CudaCompile Include="..\..\..\..\reduction_thread_fence.cu" />
+    <CudaCompile Include="..\..\..\..\RegressionSelectorBase.cu" />
+    <CudaCompile Include="..\..\..\..\RegressionSelectorConcrete.cu" />
+    <CudaCompile Include="..\..\..\..\scramble_gpu.cu" />
+    <CudaCompile Include="..\..\..\..\scramble_main.cu" />
+    <CudaCompile Include="..\..\..\..\sobol.cu" />
+    <CudaCompile Include="..\..\..\..\sobol_gpu.cu" />
+    <CudaCompile Include="..\..\..\..\sobol_int_gpu.cu" />
+    <CudaCompile Include="..\..\..\..\transpose_gpu.cu" />
+    <CudaCompile Include="..\..\..\..\transpose_main.cu" />
+    <CudaCompile Include="..\..\..\..\Utilities.cu" />
+    <CudaCompile Include="..\..\..\..\weighted_average_gpu.cu" />
+    <CudaCompile Include="..\..\..\..\weighted_average_main.cu" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\allocate_thrust.h" />
+    <ClInclude Include="..\..\..\..\Asian.h" />
+    <ClInclude Include="..\..\..\..\Asian_gpu.h" />
+    <ClInclude Include="..\..\..\..\Asian_Test.h" />
+    <ClInclude Include="..\..\..\..\basisFunctions.h" />
+    <ClInclude Include="..\..\..\..\basisFunctions_main.h" />
+    <ClInclude Include="..\..\..\..\Bridge.h" />
+    <ClInclude Include="..\..\..\..\Bridge_gpu.h" />
+    <ClInclude Include="..\..\..\..\Bridge_multi_gpu.h" />
+    <ClInclude Include="..\..\..\..\brownian_bridge.h" />
+    <ClInclude Include="..\..\..\..\Brownian_generator_full.h" />
+    <ClInclude Include="..\..\..\..\cashFlowAggregation_gpu.h" />
+    <ClInclude Include="..\..\..\..\cashFlowAggregation_main.h" />
+    <ClInclude Include="..\..\..\..\cashFlowDiscounting_gpu.h" />
+    <ClInclude Include="..\..\..\..\cashFlowDiscounting_main.h" />
+    <ClInclude Include="..\..\..\..\cashFlowGeneration_gpu.h" />
+    <ClInclude Include="..\..\..\..\cashFlowGeneration_product_gpu.h" />
+    <ClInclude Include="..\..\..\..\cashFlowGeneration_product_main.h" />
+    <ClInclude Include="..\..\..\..\cashFlowGen_earlyExProduct_gpu.h" />
+    <ClInclude Include="..\..\..\..\cashFlowGen_earlyEx_product_main.h" />
+    <ClInclude Include="..\..\..\..\cash_flow_generation_equity_one_dim_gpu.h" />
+    <ClInclude Include="..\..\..\..\cash_flow_product_equity_one_dim_gpu.h" />
+    <ClInclude Include="..\..\..\..\cash_flow_product_equity_one_dim_main.h" />
+    <ClInclude Include="..\..\..\..\ComparisonCheck.h" />
+    <ClInclude Include="..\..\..\..\const_memory_accessor.h" />
+    <ClInclude Include="..\..\..\..\const_memory_buffer.h" />
+    <ClInclude Include="..\..\..\..\Correlate_drift_gpu.h" />
+    <ClInclude Include="..\..\..\..\correlate_drift_main.h" />
+    <ClInclude Include="..\..\..\..\Correlate_gpu.h" />
+    <ClInclude Include="..\..\..\..\Correlation_main.h" />
+    <ClInclude Include="..\..\..\..\CUDAConditionalMacros.h" />
+    <ClInclude Include="..\..\..\..\cudaMacros.h" />
+    <ClInclude Include="..\..\..\..\cutil.h" />
+    <ClInclude Include="..\..\..\..\cutil_inline.h" />
+    <ClInclude Include="..\..\..\..\drift_add_gpu.h" />
+    <ClInclude Include="..\..\..\..\drift_add_main.h" />
+    <ClInclude Include="..\..\..\..\early_exercise_value_generator_gpu.h" />
+    <ClInclude Include="..\..\..\..\early_exercise_value_generator_main.h" />
+    <ClInclude Include="..\..\..\..\exercise_cash_flows_gpu.h" />
+    <ClInclude Include="..\..\..\..\exercise_cash_flows_main.h" />
+    <ClInclude Include="..\..\..\..\exercise_values_examples.h" />
+    <ClInclude Include="..\..\..\..\inverseCumulatives.h" />
+    <ClInclude Include="..\..\..\..\LinearSolverConcrete_main.h" />
+    <ClInclude Include="..\..\..\..\LinearSolver_base_main.h" />
+    <ClInclude Include="..\..\..\..\LMM_evolver_all.h" />
+    <ClInclude Include="..\..\..\..\LMM_evolver_full.h" />
+    <ClInclude Include="..\..\..\..\LMM_evolver_gpu.h" />
+    <ClInclude Include="..\..\..\..\LMM_evolver_main.h" />
+    <ClInclude Include="..\..\..\..\ls.h" />
+    <ClInclude Include="..\..\..\..\LS_basis_examples_gpu.h" />
+    <ClInclude Include="..\..\..\..\LS_Basis_gpu.h" />
+    <ClInclude Include="..\..\..\..\LS_Basis_main.h" />
+    <ClInclude Include="..\..\..\..\LS_gpu.h" />
+    <ClInclude Include="..\..\..\..\LS_main.h" />
+    <ClInclude Include="..\..\..\..\LS_main_cula.h" />
+    <ClInclude Include="..\..\..\..\mainsCuda.h" />
+    <ClInclude Include="..\..\..\..\Market_model_pricer.h" />
+    <ClInclude Include="..\..\..\..\Matrix_solve_main.h" />
+    <ClInclude Include="..\..\..\..\multid_path_gen_BS_gpu.h" />
+    <ClInclude Include="..\..\..\..\multid_path_gen_BS_main.h" />
+    <ClInclude Include="..\..\..\..\outerProduct_gpu.h" />
+    <ClInclude Include="..\..\..\..\outerProduct_main.h" />
+    <ClInclude Include="..\..\..\..\output_device.h" />
+    <ClInclude Include="..\..\..\..\reductions_gpu.h" />
+    <ClInclude Include="..\..\..\..\reduction_thread_fence.h" />
+    <ClInclude Include="..\..\..\..\RegressionSelectorBase.h" />
+    <ClInclude Include="..\..\..\..\RegressionSelectorConcrete.h" />
+    <ClInclude Include="..\..\..\..\scramble_gpu.h" />
+    <ClInclude Include="..\..\..\..\scramble_main.h" />
+    <ClInclude Include="..\..\..\..\smallFunctions.h" />
+    <ClInclude Include="..\..\..\..\sobol.h" />
+    <ClInclude Include="..\..\..\..\sobol_gpu.h" />
+    <ClInclude Include="..\..\..\..\sobol_int_gpu.h" />
+    <ClInclude Include="..\..\..\..\transpose_gpu.h" />
+    <ClInclude Include="..\..\..\..\transpose_main.h" />
+    <ClInclude Include="..\..\..\..\Utilities.h" />
+    <ClInclude Include="..\..\..\..\weighted_average_gpu.h" />
+    <ClInclude Include="..\..\..\..\weighted_average_main.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 5.5.targets" />
+  </ImportGroup>
+</Project>

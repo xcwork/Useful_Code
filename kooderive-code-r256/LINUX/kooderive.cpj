@@ -1,0 +1,59 @@
+<!DOCTYPE cpj>
+<cpj version="1.1" >
+ <session>
+  <name>Session1</name>
+  <device>
+   <name>Device_0</name>
+   <number>0</number>
+  </device>
+  <progpath>"C:/Documents/MJoshi/C/cudu22experiments/projects/cudaTest2/CUDAWinApp1/x64/Release/CUDAWinApp1.exe"</progpath>
+  <cmdlineargs>--noprompt</cmdlineargs>
+  <workdirpath>C:/Documents/MJoshi/C/cudu22experiments/projects/cudaTest2/CUDAWinApp1/x64/Release</workdirpath>
+  <datetime>09 Oct 2009 16:41:21</datetime>
+ </session>
+ <session>
+  <name>Session2</name>
+  <device>
+   <name>Device_0</name>
+   <number>0</number>
+  </device>
+  <progpath>"C:/Documents/MJoshi/C/cudu22experiments/projects/cudaTest2/CUDAWinApp1/x64/Release/CUDAWinApp1.exe"</progpath>
+  <cmdlineargs>--noprompt</cmdlineargs>
+  <workdirpath>C:/Documents/MJoshi/C/cudu22experiments/projects/cudaTest2/CUDAWinApp1/x64/Release</workdirpath>
+  <datetime>09 Oct 2009 16:41:52</datetime>
+ </session>
+ <session>
+  <name>Session3</name>
+  <device>
+   <name>Device_0</name>
+   <number>0</number>
+  </device>
+  <progpath>"C:/Documents/MJoshi/C/cudu22experiments/projects/cudaTest2/CUDAWinApp1/x64/Release/CUDAWinApp1.exe"</progpath>
+  <cmdlineargs>--noprompt</cmdlineargs>
+  <workdirpath>C:/Documents/MJoshi/C/cudu22experiments/projects/cudaTest2/CUDAWinApp1/x64/Release</workdirpath>
+  <datetime>09 Oct 2009 16:44:28</datetime>
+ </session>
+ <session>
+  <name>Session4</name>
+  <device>
+   <name>Device_0</name>
+   <number>0</number>
+  </device>
+  <progpath>"C:/Documents/MJoshi/C/cudu22experiments/projects/cudaTest2/CUDAWinApp1/x64/Release/CUDAWinApp1.exe"</progpath>
+  <cmdlineargs>--noprompt</cmdlineargs>
+  <workdirpath>C:/Documents/MJoshi/C/cudu22experiments/projects/cudaTest2/CUDAWinApp1/x64/Release</workdirpath>
+  <datetime>09 Oct 2009 16:45:12</datetime>
+ </session>
+ <session>
+  <name>Session5</name>
+  <device>
+   <name>Device_0</name>
+   <number>0</number>
+  </device>
+  <progpath>"C:/Documents/MJoshi/C/cudu22experiments/projects/cudaTest2/CUDAWinAppCleaned/x64/Release/KooDerive.exe"</progpath>
+  <cmdlineargs>--noprompt</cmdlineargs>
+  <workdirpath>C:/Documents/MJoshi/C/cudu22experiments/projects/cudaTest2/CUDAWinAppCleaned/x64/Release</workdirpath>
+  <datetime>09 Oct 2009 16:45:41</datetime>
+ </session>
+</cpj>
+
